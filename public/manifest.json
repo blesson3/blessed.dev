@@ -1,0 +1,9 @@
+{
+  "short_name": "Matt Blessed",
+  "name": "Matt Blessed Personal Website",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#282c34"
+}

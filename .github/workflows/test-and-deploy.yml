@@ -1,0 +1,42 @@
+name: test and deploy
+
+on:
+  push:
+    branches:
+      - stable
+  workflow_dispatch:
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: replace version sha for deploy
+        run: ./scripts/replace-version-sha-for-deploy.sh
+
+      - name: setup nodejs
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: cache node dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-node-16-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-16-
+
+      # wrangler is installed in this step to node_modules
+      - run: npm install
+
+      - run: npm test
+
+      - run: npm run build
+
+      - name: deploy to production
+        run: npm run publish
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}

@@ -68,6 +68,14 @@ function LinkRow()
 
 function App()
 {
+  // stupid simple redirect to the txt version file
+  const pathName = window.location.pathname.slice(1).toLowerCase();
+  if (pathName.endsWith('version'))
+  {
+    window.location.pathname = '/version.txt';
+    return (<></>);
+  }
+
   return (
     <div style={{ textAlign: 'center' }}>
       <div style={{

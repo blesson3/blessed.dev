@@ -1,3 +1,4 @@
-# Matt Blessed Personal Website
+# Matt Blessed Personal Website Source
 
-This is a very simple one-page create-react-app project to provide a landing page for [blessed.dev](https://blessed.dev).
+This is the source for my personal webpage [blessed.dev](https://blessed.dev). It's a very simple
+one-page create-react-app project that provides a landing page with links.

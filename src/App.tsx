@@ -23,7 +23,7 @@ const SocialLinkConfigs: SocialLinkConfig[] = [
     alt: 'github link',
   },
   {
-    href: 'https://www.linkedin.com/in/matt-blessed-9a3b719b/',
+    href: 'https://linkedin.com/in/matt-blessed',
     logo: LinkedInLogo,
     alt: 'linkedin link',
   },

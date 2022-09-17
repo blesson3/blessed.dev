@@ -105,9 +105,8 @@ function App()
           {'A software engineer from Michigan, USA.'}
         </p>
         <LinkRow />
-        {/* hide resume button until I get that together */}
-        {/* <a
-          href="#resume"
+        <a
+          href="/matt-blessed-resume.pdf"
           style={{
             position: 'fixed',
             bottom: '5%',
@@ -115,7 +114,7 @@ function App()
             fontSize: 'calc(10px + 1vmin)',
           }}>
           resume
-        </a> */}
+        </a>
       </div>
     </div>
   );
